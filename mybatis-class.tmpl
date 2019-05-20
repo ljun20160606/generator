@@ -1,0 +1,22 @@
+package {{.Package}};
+
+import java.io.Serializable;
+{{range $key, $value := .Imports}}import {{$value}};{{end}}
+import lombok.Data;
+import lombok.experimental.Accessors;
+
+/**
+ * {{.Comment}}
+ */
+@Data
+@Accessors(chain = true)
+public class {{.ClassName}} implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    {{range .Cols}}
+    /**
+     * {{.Comment}}
+     */
+    private {{.Type}} {{.Name}};
+    {{end}}
+}
