@@ -21,7 +21,7 @@ type Generator struct {
 }
 
 const selectTables string = `SELECT
- table_name AS name,table_comment
+ table_name AS name,table_comment AS table_comment
 FROM
  information_schema.tables
 WHERE
