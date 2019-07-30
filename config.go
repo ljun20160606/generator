@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-type GeneratorConfig struct {
+type Config struct {
 	Dest          string        `json:"dest"`
 	Pkg           string        `json:"pkg"`
 	ConnectConfig ConnectConfig `json:"connectConfig"`
@@ -38,9 +38,15 @@ func (s ConnectConfig) String() string {
 	return builder.String()
 }
 
+type TableConfig struct {
+	Includes []string `json:"includes"`
+	Excludes []string `json:"excludes"`
+}
+
 type ModelConfig struct {
-	Filename      string `json:"filename"`
-	FileExtension string `json:"fileExtension"`
+	Filename      string      `json:"filename"`
+	FileExtension string      `json:"fileExtension"`
+	TableConfig   TableConfig `json:"tableConfig"`
 }
 
 // return "a" if filename is "./a"

@@ -21,7 +21,11 @@
   },
   "modelConfig": {
     "filename": "./mybatis-class.tmpl",
-    "fileExtension": "java"
+    "fileExtension": "java",
+    "tableConfig": {
+      "includes": ["table_name"],
+      "excludes": []
+    }
   }
 }
 ```

@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	config := new(generator.GeneratorConfig)
+	config := new(generator.Config)
 	err := fs.ReadJSON("./generator.json", config)
 	if err != nil {
 		panic(err)
