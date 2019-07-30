@@ -58,7 +58,7 @@ func (g *Generator) genTable(dest, pkg, fileExtension string, t *template.Templa
 		Package:   pkg,
 		Comment:   strings.Replace(table.Comment, "\n", "\n *", -1),
 		Imports:   make(map[interface{}]string),
-		ClassName: snakeToCamelFirstUpper(table.Name),
+		ClassName: snakeToCamel(table.Name),
 	}
 
 	for i := range cols {

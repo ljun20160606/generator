@@ -15,7 +15,7 @@ func (j *SqlModel) parseMysqlColumn(column Column) {
 	col.Column = column
 	col.CanNull = column.Null.String != "NO"
 	col.DBName = column.Field
-	col.Name = snakeToCamel(column.Field)
+	col.Name = snakeToCamelStartLower(column.Field)
 	col.Comment = strings.Replace(column.Comment, "\n", `\n *`, -1)
 	colType := column.Type
 
