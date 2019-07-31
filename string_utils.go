@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-var dialect = []string{"ddl", "dml"}
+var dialect []string
 
 func snakeToCamel(name string) string {
 	//name = strings.ToLower(name)
